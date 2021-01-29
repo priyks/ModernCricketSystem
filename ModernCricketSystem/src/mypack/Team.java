@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Comparator;
 import java.util.Date;
 
-public class Team  {
+public class Team {
 
 	private String teamName;
 	private Date creationDate;
@@ -26,25 +26,20 @@ public class Team  {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	
+
 	public void createTeam(Services service) throws IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter Team Name ");
-		teamName=br.readLine();
-		creationDate=new Date();
-		
-		
+		teamName = br.readLine();
+		creationDate = new Date();
+
 	}
-	
+
 	public void showTeam() {
 
-		System.out.println("Team Name : "+teamName);
-		System.out.println("Date Of Creation : "+creationDate);
-		
+		System.out.println("Team Name : " + teamName);
+		System.out.println("Date Of Creation : " + creationDate);
+
 	}
-
-	
-
-	
 
 }

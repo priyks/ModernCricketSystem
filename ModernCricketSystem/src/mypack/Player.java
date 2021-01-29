@@ -112,59 +112,57 @@ public class Player {
 			role = Player_Role_In_Match.VICE_CAPTAIN;
 			break;
 		case 3:
-			role=Player_Role_In_Match.PLAYER;
+			role = Player_Role_In_Match.PLAYER;
 			break;
 		case 4:
 			break;
 
 		}
-		
+
 		System.out.println("Player Category :");
-		
+
 		System.out.println("Enter 1 For Batsmen");
 		System.out.println("Enter 2 For Bowller");
 		System.out.println("Enter 3 For AllRounder");
 		System.out.println("Enter 4 for WicketKeeper");
-		int categoryChoice=Integer.parseInt(br.readLine());
-		switch(categoryChoice) {
-		
-		case 1: 
-			category=PlayerCategory.BATSMEN;
+		int categoryChoice = Integer.parseInt(br.readLine());
+		switch (categoryChoice) {
+
+		case 1:
+			category = PlayerCategory.BATSMEN;
 			break;
 		case 2:
-			category=PlayerCategory.BOWLER;
+			category = PlayerCategory.BOWLER;
 			break;
 		case 3:
-			category=PlayerCategory.ALLROUNDER;
+			category = PlayerCategory.ALLROUNDER;
 			break;
 		case 4:
-			category=PlayerCategory.WICKETKEEPER;
+			category = PlayerCategory.WICKETKEEPER;
 		case 5:
 			break;
-		
+
 		}
-		
+
 		System.out.println("Enter Total Runs ");
-		runs=Integer.parseInt(br.readLine());
+		runs = Integer.parseInt(br.readLine());
 		System.out.println("Enter Total Wickets he have Taken");
-		wickets=Integer.parseInt(br.readLine());
+		wickets = Integer.parseInt(br.readLine());
 		System.out.println("Total Innings He Played ");
-		innings=Integer.parseInt(br.readLine());
-		avgRuns=runs/innings;
-		
-		
+		innings = Integer.parseInt(br.readLine());
+		avgRuns = runs / innings;
+
 	}
 
-	
 	public void showPlayer() {
-		System.out.println("Name : "+name);
-		System.out.println("Age : "+age);
-		System.out.println("Category : "+category);
-		System.out.println("Role assigned : "+ role);
-		System.out.println("Runs :"+runs);
-		System.out.println("Innings :"+innings);
-		System.out.println("Average Runs "+avgRuns);
-		System.out.println("Player For which Team : "+playFor);
-		
+		System.out.println("Name : " + name);
+		System.out.println("Age : " + age);
+		System.out.println("Category : " + category);
+		System.out.println("Role assigned : " + role);
+		System.out.println("Runs :" + runs);
+		System.out.println("Innings :" + innings);
+		System.out.println("Average Runs " + avgRuns);
+		System.out.println("Player For which Team : " + playFor);
+
 	}
 }
