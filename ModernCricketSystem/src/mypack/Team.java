@@ -79,9 +79,6 @@ public class Team {
 	 */
 	public void showTeam(String tname) {
 
-		// System.out.println("Team Name : " + teamName);
-		// System.out.println("Date Of Creation : " + creationDate);
-
 		for (Player p : players) {
 
 			if (tname.equals(p.getPlayFor())) {
