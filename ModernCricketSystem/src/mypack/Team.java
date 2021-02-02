@@ -26,7 +26,6 @@ public class Team {
 	public Team() {
 
 	}
-
 	/**
 	 * This constructs Team with teamName and creationDate
 	 * 
