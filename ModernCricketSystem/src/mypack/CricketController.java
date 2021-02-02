@@ -3,7 +3,11 @@ package mypack;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * This class Controls overall operations of Teams and Players
+ * @author priyankaku
+ * @version 0.2
+ */
 public class CricketController {
 
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -11,6 +15,7 @@ public class CricketController {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		int e = 0;
 		Services service = new Services();
+		Team team=new Team();
 		System.out.println("******************* Modern Cricket System ********************");
 		do {
 			System.out.println("Press 1  Team :");
@@ -23,10 +28,11 @@ public class CricketController {
 
 			case 1:
 				System.out.println("Press 1 to Create Team : ");
-				System.out.println("Press 2 to Show Sorted Team By Team Name : ");
+				System.out.println("Press 2 to Show Total Teams In System : ");
 				System.out.println("Press 3 to Show Sorted Team By Team Date Creation : ");
 				System.out.println("Press 4 to Show Players list Team Wise : ");
 				System.out.println("Press 5 to Search Team : ");
+				System.out.println("Press 6 to See total players In Team :");
 				System.out.println("Press Any Key to Come Back To Main Case : ");
 
 				int choiceTeam = Integer.parseInt(br.readLine());
@@ -34,15 +40,14 @@ public class CricketController {
 				switch (choiceTeam) {
 
 				case 1:
-					Team t = new Team();
-					t.createTeam(service);
-					service.teamList.add(t); // team added in system
+					team.createTeam(service);
+					service.teamList.add(new Team(team.getTeamName(),team.getCreationDate())); // team added in system
 					System.out.println("Team is added In System");
 					service.totalTeamsInSystem();
 					System.out.println("******************************************");
 					break;
 				case 2:
-					service.sortTeamByName(); // sort team by name
+					 service.totalTeamsInSystem();  // team list by name
 					System.out.println("******************************************");
 					break;
 				case 3:
@@ -51,17 +56,22 @@ public class CricketController {
 					break;
 				case 4:
 
-					System.out.println("Enter Team name To Search Team");
+					System.out.println("Enter Team name To Search Team players ");
 					String tname = br.readLine();
-					service.sortTeamPlayersByName(tname);
+					team.teamPlayers(tname); 
 					System.out.println("******************************************");
 					break;
 				case 5:
-					System.out.println("Enter Team Name to Search Team In System : "); // search team
-					System.out.println("Enter Team name To Search Team");
+					System.out.println("Enter Team name To Search Team"); // search team
 					String tname1 = br.readLine();
 					service.searchTeamByName(tname1);
 					System.out.println("******************************************");
+					break;
+					
+				case 6:
+					System.out.println("Enter Team name To see how many Players in Team : "); // total no of players in specific team 
+					String teamname = br.readLine();
+					team.totalPlayersInTeam(teamname); 
 					break;
 
 				default:
@@ -84,26 +94,27 @@ public class CricketController {
 				case 1:
 					Player p = new Player();
 					p.createPlayer(service);
-					service.playerList.add(p); // add player
+					//service.playerList.add(p);
+					team.players.add(new Player(p.getName()));  // add player
 					System.out.println("Player is added In System");
 					System.out.println("******************************************");
 					break;
 				case 2:
 					System.out.println("Enter Player Name to add in Team"); // add player to team
 					String pname = br.readLine();
-					service.addPlayerInTeam(pname);
+					team.addPlayerInTeam(pname, service);
 					System.out.println("******************************************");
 					break;
 				case 3:
 					System.out.println("Enter Player Name To Search : "); // search player
 					String pname1 = br.readLine();
-					service.searchPlayerByName(pname1);
+					team.searchPlayerByName(pname1);
 					System.out.println("******************************************");
 					break;
 				case 4:
 					System.out.println("Enter Player Name To Remove : "); // remove player from team
 					String pname2 = br.readLine();
-					service.removePlayerFromTeam(pname2);
+					team.removePlayerFromTeam(pname2);
 
 					System.out.println("******************************************");
 					break;
@@ -137,6 +148,9 @@ public class CricketController {
 			case 4:
 				e = 10;
 				System.out.println("Thanks for using our System ....");
+				break;
+				
+			default:
 				break;
 
 			}

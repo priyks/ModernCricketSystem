@@ -1,7 +1,11 @@
 package mypack;
 
 import java.io.IOException;
-
+/**
+ * This class used to play match and displays match result
+ * @author priyankaku
+ * @version 0.2
+ */
 public class Match {
 
 	private String team1;
@@ -112,11 +116,12 @@ public class Match {
 			System.out.println("Team : " + team1 + " Team Runs : " + team1Runs + " Wickets : " + team1Wickets);
 			System.out.println("Team : " + team2 + " Team Runs : " + team2Runs + " Wickets : " + team2Wickets);
 			matchResult = team1 + "Is Won...! ";
-
+			System.out.println("Match Result : " + matchResult);
 		} else {
 			System.out.println("Team : " + team1 + " Team Runs : " + team1Runs + " Wickets : " + team1Wickets);
 			System.out.println("Team : " + team2 + " Team Runs : " + team2Runs + " Wickets : " + team2Wickets);
 			matchResult = team2 + "Is Won...!";
+			System.out.println("Match Result : " + matchResult);
 		}
 
 	}
